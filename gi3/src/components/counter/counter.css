@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.counter{
+    background-color: #141516;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-size: 15rem;
+    color: #ced4e2;
+}
+
+.counter .btn {
+    background: transparent;
+    color: #ced4e2;
+    border: solid .5px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    font-size: 3.5rem;
+    margin: 0 15px;
+    cursor: pointer;
+}
