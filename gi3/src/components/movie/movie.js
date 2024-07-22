@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -28,6 +29,7 @@ function MovieFinder() {
 
     return (
         <div className="container"> 
+            <h1>Movie Search</h1>
             <input type="text" className="input" onChange={handleInputChange} value={query} placeholder="Search for a movie..." />
             <Swiper
                 slidesPerView={5}
@@ -43,8 +45,9 @@ function MovieFinder() {
                         <div className="movie-slide">
                             <h3>{movie.title}</h3>
                             {movie.poster_path && (
-                                <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+                               <Link to={`/movie/${movie.id}`}><img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} /></Link> 
                             )}
+                            <Link to={`/movie/${movie.id}`} className="details-link">View Details</Link>
                         </div>
                     </SwiperSlide>
                 ))}
