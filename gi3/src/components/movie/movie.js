@@ -1,4 +1,10 @@
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './movie.css';
+import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 
 function MovieFinder() {
     const [query, setQuery] = useState('');
@@ -10,7 +16,7 @@ function MovieFinder() {
                 .then((response) => response.json())
                 .then((data) => {
                     setMovies(data.results);
-                    console.log(data.results)
+                    console.log(data.results);
                 })
                 .catch((error) => console.error("Error fetching movies:", error));
         }
@@ -21,17 +27,29 @@ function MovieFinder() {
     };
 
     return (
-        <>
-            <input type="text" className="input" onChange={handleInputChange} value={query} />
-            <ul>
+        <div className="container"> 
+            <input type="text" className="input" onChange={handleInputChange} value={query} placeholder="Search for a movie..." />
+            <Swiper
+                slidesPerView={5}
+                spaceBetween={30}
+                keyboard={{ enabled: true }}
+                pagination={{ clickable: true }}
+                navigation={true}
+                modules={[Keyboard, Pagination, Navigation]}
+                className="mySwiper"
+            >
                 {movies.map((movie) => (
-                    <li key={movie.id}>
-                    {movie.title}
-                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title}></img> 
-                    </li>
+                    <SwiperSlide key={movie.id}>
+                        <div className="movie-slide">
+                            <h3>{movie.title}</h3>
+                            {movie.poster_path && (
+                                <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+                            )}
+                        </div>
+                    </SwiperSlide>
                 ))}
-            </ul>
-        </>
+            </Swiper>
+        </div>
     );
 }
 
