@@ -1,10 +1,11 @@
 import './App.css';
-import Counter from './components/counter/counter';
+// import Counter from './components/counter/counter';
+import MovieFinder from './components/movie/movie';
 
 function App() {
   return (
     <div className="App">
-     <Counter/>
+      <MovieFinder></MovieFinder>
     </div>
   );
 }
