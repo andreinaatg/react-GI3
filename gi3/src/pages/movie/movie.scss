@@ -18,12 +18,13 @@ $gradientColor2: #b10d0d;
 }
 
 body {
-    color: white;
-    @include gradient($gradientColor1,$gradientColor2 );
     font-family: $font;
 }
 .container {
-    max-width: 1200px;
+    color: white;
+    @include gradient($gradientColor1,$gradientColor2 );
+    height: 100vh;
+    max-width: 100vw;
     margin: 0 auto;
     padding: 20px;
     .input {
@@ -67,6 +68,8 @@ body {
 }
 
 .movie-detail {
+    @include gradient($gradientColor1,$gradientColor2 );
+    height: 100vh;
     text-align: center;
     padding: 20px;
     p {

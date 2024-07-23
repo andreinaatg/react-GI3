@@ -1,33 +1,26 @@
 import './App.css';
-// import Counter from './components/counter/counter';
+import Counter from './pages/counter/counter';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import MovieFinder from './components/movie/movie';
-// import MovieDetail from './components/movie/movieDetails';
-import Home from './home';
+import MovieFinder from './pages/movie/movie';
+import MovieDetail from './pages/movie/movieDetails';
+import Todo from './todo';
+import Navbar from './components/Nav';
 function App() {
   return (
-    // <>
-    
-    // <Counter/>
-    // </>
-    //   <Router>
-    //       <div className="App">
-    //           <Routes>
-    //               <Route path="/" element={<MovieFinder />} />
-    //               <Route path="/movie/:id" element={<MovieDetail />} />
-    //           </Routes>
-    //       </div>
-    //   </Router>
-    <div className="App">
-    <Router>
-    <nav>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-      </Routes>
-    </nav>
-    </Router>
-  </div>
+    <>
+      <Router>
+          <div className="App">
+            <Navbar/>
+              <Routes>
+                <Route path="/counter"  index element={<Counter />}/>
+                <Route path="/todoList" element={<Todo />}/>
+                <Route path="/movieFinder" element={<MovieFinder />} />
+                <Route path="/movie/:id" element={<MovieDetail />} />
+              </Routes>
+          </div>
+      </Router>
+    </>
   );
 }
 

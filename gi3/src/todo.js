@@ -11,7 +11,7 @@ const TaskCard = ({ handleRemove, index }) => {
   );
 };
 
-export default function Home() {
+export default function Todo() {
   const [taskList, setTaskList] = useState([]);
 
   const handleRemove = (index) => {

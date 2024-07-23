@@ -25,7 +25,7 @@ function MovieDetail() {
             <p>{movie.overview}</p>
             <p>Release Date: {movie.release_date}</p>
             <p>Rating: {movie.vote_average}</p>
-            <Link to='/'><button id='return-btn'>return</button></Link>
+            <Link to='/movieFinder'><button id='return-btn'>return</button></Link>
         </div>
     );
 }

@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 body {
-  color: white;
-  background: linear-gradient(to right, #1a1a1a, #b10d0d);
   font-family: "Lilita One", sans-serif;
 }
 
 .container {
-  max-width: 1200px;
+  color: white;
+  background: linear-gradient(to right, #1a1a1a, #b10d0d);
+  height: 100vh;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 20px;
 }
@@ -50,6 +51,8 @@ body {
 }
 
 .movie-detail {
+  background: linear-gradient(to right, #1a1a1a, #b10d0d);
+  height: 100vh;
   text-align: center;
   padding: 20px;
 }
